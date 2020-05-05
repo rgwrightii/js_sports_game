@@ -11,13 +11,41 @@ const oneGoal = document.querySelector("#teamone-numgoals");
 
 oneShoot.addEventListener("click", function() {
     console.log("getRandomInt");
-    let newCounterValue = Math.floor(Math.random() * 2) + 1;
-    oneNum.innerHTML = newCounterValue;
+    let newCount = Number(oneNum.innerHTML) + 1;
+    oneNum.innerHTML = newCount
+    
+    if (Math.random() > 0.5) {
+        let newGoal = Number(oneGoal.innerHTML) +1;
+        oneGoal.innerHTML = newGoal;
+}})
 
+const twoNum = document.querySelector("#teamtwo-numshots");
+const twoShoot = document.querySelector("#teamtwo-shoot-button");
+const twoGoal = document.querySelector("#teamtwo-numgoals");
+
+twoShoot.addEventListener("click", function() {
+    console.log("getRandy");
+    let twoCount = Number(twoNum.innerHTML) + 1;
+    twoNum.innerHTML = twoCount;
+
+    if (Math.random() > 0.5) {
+        let newTwo = Number(twoGoal.innerHTML) +1;
+        twoGoal.innerHTML = newTwo;
+    }
 })
 
-if (newCounterValue < 0) {
-    + 1
+const mainReset = document.querySelector("#reset-button");
+const numReset = document.querySelector("#num-resets")
 
-}
-
+mainReset.addEventListener("click", function() {
+    
+    console.log("Resetter");
+    
+    let thisReset = Number(numReset.innerHTML) + 1;
+    numReset.innerHTML = thisReset;
+    
+    twoGoal.innerHTML = 0
+    oneGoal.innerHTML = 0
+    oneNum.innerHTML = 0
+    twoNum.innerHTML = 0
+})
